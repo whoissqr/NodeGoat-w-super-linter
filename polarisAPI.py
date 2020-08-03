@@ -86,7 +86,7 @@ def send_email(receiver_email):
     smtp_server = 'smtp.sendgrid.net'
     smtp_port = 465
     smtp_username = 'apikey'
-    smtp_password = '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'
+    smtp_password = 'SGc'
 
     sender_email = 'noreply@synopsys.com'
 
