@@ -1,0 +1,18 @@
+version: "1"
+project: 
+  name: miniJS-w-action-issue
+  branch: Master 
+  revision:
+    name: ${scm.git.commit}
+    date: ${scm.git.commit.date}
+    
+capture:
+  fileSystem:
+    javascript:
+      extensions: [js, ts]
+      files:
+        - directory: ${project.projectDir}
+      
+install:
+  coverity:
+    version: latest

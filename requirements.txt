@@ -1,0 +1,8 @@
+python-graphql-client==0.3.0
+httpx
+feedparser
+datetime
+blackduck
+jsonapi_requests
+pandas
+jsonapi_requests
