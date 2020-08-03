@@ -1,119 +1,65 @@
-# NodeGoat
-
-Being lightweight, fast, and scalable, Node.js is becoming a widely adopted platform for developing web applications. This project provides an environment to learn how OWASP Top 10 security risks apply to web applications developed using Node.js and how to effectively address them.
-
-## Getting Started
-OWASP Top 10 for Node.js web applications:
-
-### Know it!
-[Tutorial Guide](http://nodegoat.herokuapp.com/tutorial) explaining how each of the OWASP Top 10 vulnerabilities can manifest in Node.js web apps and how to prevent it.
-
-### Do it!
-[A Vulnerable Node.js App for Ninjas](http://nodegoat.herokuapp.com/) to exploit, toast, and fix. You may like to [set up your own copy](#how-to-setup-your-copy-of-nodegoat) of the app to fix and test vulnerabilities. Hint: Look for comments in the source code.
-##### Default user accounts
-The database comes pre-populated with these user accounts created as part of the seed data -
-* Admin Account - u:admin p:Admin_123
-* User Accounts (u:user1 p:User1_123), (u:user2 p:User2_123)
-* New users can also be added using the sign-up page.
-
-## How to Setup Your Copy of NodeGoat
-
-### OPTION 1 - One click install on Heroku
-The the quickest way to get running with NodeGoat is to click the button below to deploy it on Heroku.
-
-Even though it is not essential, but recommended that you fork this repository and deploy the forked repo.
-This would allow you to fix vulnerabilities in your own forked version, and deploy and test it on heroku.
-
-[![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
-
-This Heroku instance uses Free ($0/month) node server and MongoLab add-on.
-
-### OPTION 2 - Run NodeGoat on your machine
-
-If you do not wish to run NodeGoat on Heroku, please follow these steps to setup and run it locally -
-* Install [Node.js](http://nodejs.org/) - NodeGoat requires Node v8 or above
-
-* Clone the github repository
-```
-git clone https://github.com/OWASP/NodeGoat.git
-```
-
-*go to the directory
-```
-cd NodeGoat
-```
-
-* Install node modules
-```
-npm install
-```
-
-* Create Mongo DB:
-    You can create a remote MongoDB instance or use local mongod installation
-    * A. Using Remote MongoDB
-        * Create a sandbox mongoDB instance (free) at [mLab](https://mlab.com/plans/pricing/#plan-sandbox)
-        * Create a new database.
-        * Create a user.
-        * Update the `db` property in file `config/env/development.js` to reflect your DB setup. (in format: `mongodb://<username>:<password>@<databasename>`)
-    * OR B.Using local MongoDB
-        * If using local Mongo DB instance, start [mongod](http://docs.mongodb.org/manual/reference/program/mongod/#bin.mongod).
-        * Update the `db` property in file `config/env/development.js` to reflect your DB setup. (in format: `mongodb://localhost:27017/<databasename>`)
-
-* Populate MongoDB with seed data required for the app
-    * Run the npm-script below to populate the DB with seed data required for the application. Pass the desired environment as argument. If not passed, "development" is the default:
-```
-npm run db:seed
-```
-* Start server, this starts the NodeGoat application at url [http://localhost:4000/](http://localhost:4000/)
-```
-npm start
-```
-
-* Start server with nodemon, this starts the NodeGoat application at url [http://localhost:5000/](http://localhost:5000/)
-```
-npm run dev
-```
-
-### OPTION 3 - Run NodeGoat on Docker
-
-**You need to install [docker](https://docs.docker.com/installation/) and [docker compose](https://docs.docker.com/compose/install/) to be able to use this option**
-
-The repo includes the Dockerfile and docker-compose.yml necessary to setup the app and the db instance then connect them together.
-
-* Change the db config in `config/env/development.js` to point to the respective Docker container.
-```
-db: "mongodb://mongo:27017/nodegoat",
-```
-* Build the images:
-```
-docker-compose build
-```
-* Run the app:
-```
-docker-compose up
-```
-
-
-#### Customizing the Default Application Configuration
-The default application settings (database url, http port, etc.) can be changed by updating the [config file] (https://github.com/OWASP/NodeGoat/blob/master/config/env/all.js).
-
-## Report bugs, Feedback, Comments
-*  Open a new [issue](https://github.com/OWASP/NodeGoat/issues) or contact team by joining chat at [Slack](https://owasp.slack.com/messages/project-nodegoat/) or [![Join the chat at https://gitter.im/OWASP/NodeGoat](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/OWASP/NodeGoat?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
-
-
-## Contributing
-
-Please Follow [the contributing guide](CONTRIBUTING.md)
-
-## Code Of Conduct (CoC)
-
-This project is bound by a [Code of Conduct](CODE_OF_CONDUCT.md).
-
-## Contributors
-Here are the amazing [contributors](https://github.com/OWASP/NodeGoat/graphs/contributors) to the NodeGoat project.
-
-## Supports
-- Thanks to JetBrains for providing licenses to fantastic [WebStorm IDE](https://www.jetbrains.com/webstorm/) to build this project.
-
-## License
-Code licensed under the [Apache License v2.0.](http://www.apache.org/licenses/LICENSE-2.0)
+## === scan result for last PR/commit status === 
+<br/><br/>
+###### SCA scan by Synopsys Black Duck
+|OSS component | Status | Link|
+| --- | --- | --- |
+|adm-zip | in VIOLATION | [link](https://poc94.blackduck.synopsys.com/api/projects/fdbe6f8a-e0e9-4b4b-96c3-1574f2484e9d/versions/65e616e6-3775-4ee2-a4c1-1edfdb05187e/components/f54b4d4d-cf2b-4d26-be63-ec9d8b096e21/versions/00128416-e148-462b-9608-34a746232d02/policy-rules)|
+|chownr | in VIOLATION | [link](https://poc94.blackduck.synopsys.com/api/projects/fdbe6f8a-e0e9-4b4b-96c3-1574f2484e9d/versions/65e616e6-3775-4ee2-a4c1-1edfdb05187e/components/a0d5c298-9bcc-43fa-9042-3a6ca1b603e3/versions/3d0e5859-2ca4-4b29-9bc9-0fe6d738f7ca/policy-rules)|
+|chownr | in VIOLATION | [link](https://poc94.blackduck.synopsys.com/api/projects/fdbe6f8a-e0e9-4b4b-96c3-1574f2484e9d/versions/65e616e6-3775-4ee2-a4c1-1edfdb05187e/components/a0d5c298-9bcc-43fa-9042-3a6ca1b603e3/versions/d9004f41-a8a7-4093-9b86-9475d1d45db8/policy-rules)|
+|cryptiles | in VIOLATION | [link](https://poc94.blackduck.synopsys.com/api/projects/fdbe6f8a-e0e9-4b4b-96c3-1574f2484e9d/versions/65e616e6-3775-4ee2-a4c1-1edfdb05187e/components/bb3e6490-bb4f-4ca5-a95e-413bf194516b/versions/486d02b5-880b-425e-a384-ad38c2fd4609/policy-rules)|
+|cryptiles | in VIOLATION | [link](https://poc94.blackduck.synopsys.com/api/projects/fdbe6f8a-e0e9-4b4b-96c3-1574f2484e9d/versions/65e616e6-3775-4ee2-a4c1-1edfdb05187e/components/bb3e6490-bb4f-4ca5-a95e-413bf194516b/versions/e6eb8a9b-7645-45cd-a373-cbc3c08209a1/policy-rules)|
+|dot-prop | in VIOLATION | [link](https://poc94.blackduck.synopsys.com/api/projects/fdbe6f8a-e0e9-4b4b-96c3-1574f2484e9d/versions/65e616e6-3775-4ee2-a4c1-1edfdb05187e/components/851d014d-a2cb-43d4-959d-e892b1b2df43/versions/04c06dec-52eb-4753-83ae-8b0acfb49ce3/policy-rules)|
+|fstream | in VIOLATION | [link](https://poc94.blackduck.synopsys.com/api/projects/fdbe6f8a-e0e9-4b4b-96c3-1574f2484e9d/versions/65e616e6-3775-4ee2-a4c1-1edfdb05187e/components/80b7ad5b-937f-4645-9b94-7f6fb1b7e95a/versions/03451ef5-26ab-4392-9313-0d3bc4c7a020/policy-rules)|
+|Growl | in VIOLATION | [link](https://poc94.blackduck.synopsys.com/api/projects/fdbe6f8a-e0e9-4b4b-96c3-1574f2484e9d/versions/65e616e6-3775-4ee2-a4c1-1edfdb05187e/components/af980dc4-74e4-4f31-a4aa-cb9b1c4e2fc4/versions/11bdf468-9a17-4505-ac40-ae73150c9e0c/policy-rules)|
+|Handlebars.js | in VIOLATION | [link](https://poc94.blackduck.synopsys.com/api/projects/fdbe6f8a-e0e9-4b4b-96c3-1574f2484e9d/versions/65e616e6-3775-4ee2-a4c1-1edfdb05187e/components/c98d0f87-41c4-453b-9cec-5e4ae55a0dbf/versions/0d2b47a0-7104-4437-8574-744005c0a577/policy-rules)|
+|is-my-json-valid | in VIOLATION | [link](https://poc94.blackduck.synopsys.com/api/projects/fdbe6f8a-e0e9-4b4b-96c3-1574f2484e9d/versions/65e616e6-3775-4ee2-a4c1-1edfdb05187e/components/2b859cbe-d55c-423e-8796-e1929b6d15d9/versions/73acd9b5-5736-46fd-9efd-1bc72fd1854f/policy-rules)|
+|is-my-json-valid | in VIOLATION | [link](https://poc94.blackduck.synopsys.com/api/projects/fdbe6f8a-e0e9-4b4b-96c3-1574f2484e9d/versions/65e616e6-3775-4ee2-a4c1-1edfdb05187e/components/2b859cbe-d55c-423e-8796-e1929b6d15d9/versions/fb982003-a0c9-4faf-87bb-cb66f81900a9/policy-rules)|
+|isaacs's npm | in VIOLATION | [link](https://poc94.blackduck.synopsys.com/api/projects/fdbe6f8a-e0e9-4b4b-96c3-1574f2484e9d/versions/65e616e6-3775-4ee2-a4c1-1edfdb05187e/components/bd36dc9a-7753-4258-ba87-72ecba5b55f7/versions/55ae351b-df60-4cf9-ae50-5e92e295f744/policy-rules)|
+|js-bson | in VIOLATION | [link](https://poc94.blackduck.synopsys.com/api/projects/fdbe6f8a-e0e9-4b4b-96c3-1574f2484e9d/versions/65e616e6-3775-4ee2-a4c1-1edfdb05187e/components/d6f2c226-a8f7-46b6-bf3c-7a9785317e13/versions/87bcd229-6704-4cfe-9259-57caeb62d20c/policy-rules)|
+|JS-YAML. Native JS port of PyYAML. | in VIOLATION | [link](https://poc94.blackduck.synopsys.com/api/projects/fdbe6f8a-e0e9-4b4b-96c3-1574f2484e9d/versions/65e616e6-3775-4ee2-a4c1-1edfdb05187e/components/a8c1201e-b916-4252-8d6f-8115b179cb0e/versions/b1aa230e-d9e1-4b1f-95cb-c249a430e236/policy-rules)|
+|JS-YAML. Native JS port of PyYAML. | in VIOLATION | [link](https://poc94.blackduck.synopsys.com/api/projects/fdbe6f8a-e0e9-4b4b-96c3-1574f2484e9d/versions/65e616e6-3775-4ee2-a4c1-1edfdb05187e/components/a8c1201e-b916-4252-8d6f-8115b179cb0e/versions/0acf519c-7bcf-4761-ac85-d5b23d59cd17/policy-rules)|
+|Lo-Dash | in VIOLATION | [link](https://poc94.blackduck.synopsys.com/api/projects/fdbe6f8a-e0e9-4b4b-96c3-1574f2484e9d/versions/65e616e6-3775-4ee2-a4c1-1edfdb05187e/components/231f0898-c453-415b-91fa-fba6585fdb82/versions/8de18a1b-b252-4f63-9c86-38a48920279f/policy-rules)|
+|Lo-Dash | in VIOLATION | [link](https://poc94.blackduck.synopsys.com/api/projects/fdbe6f8a-e0e9-4b4b-96c3-1574f2484e9d/versions/65e616e6-3775-4ee2-a4c1-1edfdb05187e/components/231f0898-c453-415b-91fa-fba6585fdb82/versions/a9296a07-eaa6-4638-bd5a-1cfc0f20d8c3/policy-rules)|
+|Lo-Dash | in VIOLATION | [link](https://poc94.blackduck.synopsys.com/api/projects/fdbe6f8a-e0e9-4b4b-96c3-1574f2484e9d/versions/65e616e6-3775-4ee2-a4c1-1edfdb05187e/components/231f0898-c453-415b-91fa-fba6585fdb82/versions/740cd515-eca7-47ca-b834-bdeaceeadb85/policy-rules)|
+|mime | in VIOLATION | [link](https://poc94.blackduck.synopsys.com/api/projects/fdbe6f8a-e0e9-4b4b-96c3-1574f2484e9d/versions/65e616e6-3775-4ee2-a4c1-1edfdb05187e/components/5ee678c4-0578-4756-ac44-7ec95d1b6ab2/versions/14bcb2f8-7d42-4cb6-8c9d-ff8235abeb1c/policy-rules)|
+|minimatch | in VIOLATION | [link](https://poc94.blackduck.synopsys.com/api/projects/fdbe6f8a-e0e9-4b4b-96c3-1574f2484e9d/versions/65e616e6-3775-4ee2-a4c1-1edfdb05187e/components/213461e4-29a5-4b35-b33c-d7f122dffd1f/versions/2f339af9-f6ab-4580-8588-4f8c1b27f09a/policy-rules)|
+|minimist | in VIOLATION | [link](https://poc94.blackduck.synopsys.com/api/projects/fdbe6f8a-e0e9-4b4b-96c3-1574f2484e9d/versions/65e616e6-3775-4ee2-a4c1-1edfdb05187e/components/5c9476fd-5f82-4a31-bb81-e549abf8cec0/versions/b107e95e-8b9a-469c-80b1-77e2a6fe1685/policy-rules)|
+|minimist | in VIOLATION | [link](https://poc94.blackduck.synopsys.com/api/projects/fdbe6f8a-e0e9-4b4b-96c3-1574f2484e9d/versions/65e616e6-3775-4ee2-a4c1-1edfdb05187e/components/5c9476fd-5f82-4a31-bb81-e549abf8cec0/versions/f8b91b41-6eaa-41a7-a385-f0247a226b14/policy-rules)|
+|minimist | in VIOLATION | [link](https://poc94.blackduck.synopsys.com/api/projects/fdbe6f8a-e0e9-4b4b-96c3-1574f2484e9d/versions/65e616e6-3775-4ee2-a4c1-1edfdb05187e/components/5c9476fd-5f82-4a31-bb81-e549abf8cec0/versions/c33a2c02-d3ed-41d6-98e8-8adb83821f7d/policy-rules)|
+|mixin-deep | in VIOLATION | [link](https://poc94.blackduck.synopsys.com/api/projects/fdbe6f8a-e0e9-4b4b-96c3-1574f2484e9d/versions/65e616e6-3775-4ee2-a4c1-1edfdb05187e/components/99e87c8c-8b71-4f75-9a56-66935490f7dd/versions/30809b44-4dc9-4f83-bdd2-197949f170ad/policy-rules)|
+|Node-cli | in VIOLATION | [link](https://poc94.blackduck.synopsys.com/api/projects/fdbe6f8a-e0e9-4b4b-96c3-1574f2484e9d/versions/65e616e6-3775-4ee2-a4c1-1edfdb05187e/components/d87ecefd-8dbf-43a8-914f-eec15d7cd73d/versions/66edcbd6-676f-442a-8c8d-19ba3754482e/policy-rules)|
+|set-value | in VIOLATION | [link](https://poc94.blackduck.synopsys.com/api/projects/fdbe6f8a-e0e9-4b4b-96c3-1574f2484e9d/versions/65e616e6-3775-4ee2-a4c1-1edfdb05187e/components/d49b35ba-18ad-4c3b-9564-ea11333d82f5/versions/ef94bd06-6ff9-4074-b1b0-3bb2d1c15f96/policy-rules)|
+|set-value | in VIOLATION | [link](https://poc94.blackduck.synopsys.com/api/projects/fdbe6f8a-e0e9-4b4b-96c3-1574f2484e9d/versions/65e616e6-3775-4ee2-a4c1-1edfdb05187e/components/d49b35ba-18ad-4c3b-9564-ea11333d82f5/versions/ca956e02-d9f9-4adb-a79b-100da43e01fd/policy-rules)|
+|stringstream | in VIOLATION | [link](https://poc94.blackduck.synopsys.com/api/projects/fdbe6f8a-e0e9-4b4b-96c3-1574f2484e9d/versions/65e616e6-3775-4ee2-a4c1-1edfdb05187e/components/070f7c72-bfcf-48ea-a16a-bd09eb3df9c4/versions/bfc5f6fa-f0c4-4e0d-9f82-af47acd65ca3/policy-rules)|
+|tar | in VIOLATION | [link](https://poc94.blackduck.synopsys.com/api/projects/fdbe6f8a-e0e9-4b4b-96c3-1574f2484e9d/versions/65e616e6-3775-4ee2-a4c1-1edfdb05187e/components/76fdd28b-3699-4874-8487-07334d337826/versions/ee0f66ef-7017-4216-a3b5-77e0eb86fa09/policy-rules)|
+###### SAST scan by Synopsys Coverity
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>path</th>
+      <th>checker</th>
+      <th>name</th>
+      <th>severity</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>server.js</td>
+      <td>EXPRESS_X_POWERED_BY_ENABLED</td>
+      <td>Sending X-Powered-By header</td>
+      <td>low</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>config/env/all.js</td>
+      <td>HARDCODED_CREDENTIALS</td>
+      <td>Use of hard-coded URI password</td>
+      <td>medium</td>
+    </tr>
+  </tbody>
+</table><br/>::: warning
+*This is a personal hobbby project only.*
+*Not associated or supported by Synopsys SIG.*
+:::
