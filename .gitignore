@@ -27,3 +27,4 @@ README.md
 settings.json
 *.pyc
 .synopsys
+.polaris-coverity.zip
