@@ -38,15 +38,18 @@ if __name__ == "__main__":
 
     # SCA table header
     rewritten += "###### SCA scan by Synopsys Black Duck\n"
-    rewritten += "|OSS component | Status | Link|\n"
-    rewritten += "| --- | --- | --- |\n"
+    rewritten += "|OSS component | Version | Status | Link|\n"
+    rewritten += "| --- | --- | --- | --- |\n"
     for bom_component in bom_components.get('items'):
         if bom_component.get('policyStatus') == "IN_VIOLATION":
             try:
                 component_name = bom_component['componentName']
+                component_version_name = bom_component['componentVersionName']
                 link = hub.get_link(bom_component, "policy-rules")
-                rewritten += "|" + component_name + " | in VIOLATION | "
-                rewritten += "[link](" + link + ")" + "|\n"
+                rewritten += "|" + component_name
+                rewritten += "|" + component_version_name
+                rewritten += "| in VIOLATION"
+                rewritten += "|[link](" + link + ")" + "|\n"
                 print(component_name + " is IN_VIOLATION")
             except Exception:
                 logging.error(

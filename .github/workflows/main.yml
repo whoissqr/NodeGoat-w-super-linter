@@ -33,6 +33,7 @@ jobs:
         with:
           args: '-d --polaris.url="${{secrets.POLARIS_URL}}" 
           --polaris.access.token="${{secrets.POLARIS_TOKEN}}"
+          --polaris.arguments=“-w”
           --detect.tools="POLARIS"'
 
       - name: Synopsys Detect
