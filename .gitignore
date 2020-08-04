@@ -26,3 +26,4 @@ README.md
 .restconfig.json
 settings.json
 *.pyc
+.synopsys

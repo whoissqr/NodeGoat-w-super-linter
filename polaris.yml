@@ -7,12 +7,17 @@ project:
     date: ${scm.git.commit.date}
     
 capture:
-  fileSystem:
-    javascript:
-      extensions: [js, ts]
-      files:
-        - directory: ${project.projectDir}
-      
+  coverity:
+    buildless:
+      project:
+        languages:
+          - "javascript"
+
+analyze:
+    mode: central
+    coverity:
+        cov-analyze: ["--all", "--webapp-security", "--enable-audit-mode" ]
+        
 install:
   coverity:
     version: latest
