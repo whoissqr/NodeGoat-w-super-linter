@@ -55,7 +55,7 @@ if __name__ == "__main__":
 
     # get the polaris scanning issues
     rewritten += "###### SAST scan by Synopsys Coverity\n"
-    rewritten += polarisAPI.getIssues("miniJS-w-action-issue", "Master")
+    rewritten += polarisAPI.getIssues("NodeGoat-w-super-linter", "master")
     rewritten += "<br/>"
 
     rewritten += "::: warning\n"

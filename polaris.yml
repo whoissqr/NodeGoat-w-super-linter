@@ -1,7 +1,7 @@
 version: "1"
 project: 
-  name: miniJS-w-action-issue
-  branch: Master 
+  name: NodeGoat-w-super-linter
+  branch: master 
   revision:
     name: ${scm.git.commit}
     date: ${scm.git.commit.date}
