@@ -560,7 +560,8 @@ def getIssues(projectId, branchId, runId, limit, filterlist=None, triage=False, 
                 except: path = None
                 
             # shichao, convert path to README.md context
-            path = "<a href=" + path + ">" + path + "</a>"
+            path_tmp = "<a href=" + path + ">" + path + "</a>"
+            path = path_tmp
 
             if issue_included['id'] == issue_transitions_id:
                 # TODO should we check for issue_included['type'] == 'transition'??
@@ -584,7 +585,8 @@ def getIssues(projectId, branchId, runId, limit, filterlist=None, triage=False, 
                 url += '/issues/' + key
                 
                 # shichao, convert to README.md context
-                url = "<a href=" + url + ">link</a>"
+                url_tmp = "<a href=" + url + ">link</a>"
+                url = url_tmp
 
         if triage:
             triage_start = datetime.now()
