@@ -579,6 +579,9 @@ def getIssues(projectId, branchId, runId, limit, filterlist=None, triage=False, 
                 url = baseUrl + '/revisions/'
                 url += revisionId
                 url += '/issues/' + key
+                
+                # shichao, convert to readme.md format
+                url = "[link](" + url + ")"
 
         if triage:
             triage_start = datetime.now()
