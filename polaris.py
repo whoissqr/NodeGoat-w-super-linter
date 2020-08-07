@@ -554,6 +554,7 @@ def getIssues(projectId, branchId, runId, limit, filterlist=None, triage=False, 
                 try: type = issue_included['attributes']['issue-type']
                 except: type = None
 
+            path = ""
             if issue_included['id'] == issue_path_id:
                 dirsep = '/'
                 try: path = dirsep.join(issue_included['attributes']['path'])
