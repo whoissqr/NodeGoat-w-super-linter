@@ -587,7 +587,7 @@ def getIssues(projectId, branchId, runId, limit, filterlist=None, triage=False, 
                 url += '/issues/' + key
                 
                 # shichao, convert to README.md context
-                url_tmp = "<a href=\"" + url + "\">link</a>"
+                url_tmp = r"<a href=" + "\"" + url + "\"" + r">link</a>"
                 url = url_tmp
 
         if triage:
