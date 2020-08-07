@@ -49,7 +49,7 @@
       <td>&lt;a href=&gt;&lt;/a&gt;</td>
       <td>PATH_MANIPULATION</td>
       <td>audit</td>
-      <td>&lt;a href="https://sipse.polaris.synopsys.com/projects/47cf8278-84c9-4bd5-b986-cd0ec091aa01/branches/da3ee0b8-2e49-48f7-8d2b-b5a4e72ace58/revisions/dab28ff8-e0b3-4821-9fe8-f89add332ced/issues/18633d20cd783f04e4b8ea4f62f3a8fa366c9aa04c6d9b4ecae6452cdfa088ab"&gt;link&lt;/a&gt;</td>
+      <td><a href="https://sipse.polaris.synopsys.com/projects/47cf8278-84c9-4bd5-b986-cd0ec091aa01/branches/da3ee0b8-2e49-48f7-8d2b-b5a4e72ace58/revisions/dab28ff8-e0b3-4821-9fe8-f89add332ced/issues/18633d20cd783f04e4b8ea4f62f3a8fa366c9aa04c6d9b4ecae6452cdfa088ab">link</a></td>
     </tr>
     <tr>
       <th>1</th>
