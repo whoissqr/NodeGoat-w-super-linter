@@ -39,9 +39,7 @@ jobs:
                  --blackduck.api.token="${{ secrets.BLACKDUCK_API_TOKEN }}" 
                  --detect.project.name="${{ github.event.repository.name }}"
                  --detect.project.version.name="${{ steps.vars.outputs.sha_short }}"
-                 --detect.policy.check.fail.on.severities=MAJOR
-                 --detect.report.timeout=3000
-                 --detect.risk.report.pdf=false'
+                '
 
       - name: Set up Python
         uses: actions/setup-python@v2
