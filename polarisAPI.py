@@ -137,7 +137,7 @@ def getIssues(project, branch):
     csv = False
     date = None
     exit1 = False
-    reportSpec = 'path,checker,severity,url'.split(',')
+    reportSpec = 'path,checker,severity'.split(',')
 
     if ((url == None) or (token == None)):
         print('FATAL: POLARIS_SERVER_URL and POLARIS_ACCESS_TOKEN must be set via environment variables or the CLI')

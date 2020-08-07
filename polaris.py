@@ -559,11 +559,6 @@ def getIssues(projectId, branchId, runId, limit, filterlist=None, triage=False, 
                 dirsep = '/'
                 try: path = dirsep.join(issue_included['attributes']['path'])
                 except: path = None
-                
-            # shichao, convert path to README.md context
-            path_tmp = "<a href=" + path + ">" + path + "</a>"
-            path = path_tmp
-            print("path = " + path)
 
             if issue_included['id'] == issue_transitions_id:
                 # TODO should we check for issue_included['type'] == 'transition'??
@@ -585,10 +580,6 @@ def getIssues(projectId, branchId, runId, limit, filterlist=None, triage=False, 
                 url = baseUrl + '/revisions/'
                 url += revisionId
                 url += '/issues/' + key
-                
-                # shichao, convert to README.md context
-                url_tmp = r"<a href=" + "\"" + url + "\"" + r">link</a>"
-                url = url_tmp
 
         if triage:
             triage_start = datetime.now()
