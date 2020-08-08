@@ -38,8 +38,8 @@ if __name__ == "__main__":
 
     # SCA table header
     rewritten += "###### SCA scan by Synopsys Black Duck\n"
-    rewritten += "|OSS component | Version | Status | Link|\n"
-    rewritten += "| --- | --- | --- | --- |\n"
+    rewritten += "|OSS component | Version | Status | noVuln Version| Latest Version |\n"
+    rewritten += "| --- | --- | --- | --- | --- |\n"
     for bom_component in bom_components.get('items'):
         if bom_component.get('policyStatus') == "IN_VIOLATION":
             try:
@@ -49,12 +49,20 @@ if __name__ == "__main__":
                 rewritten += "|" + component_name
                 rewritten += "|" + component_version_name
                 rewritten += "| in VIOLATION"
-                rewritten += "|[link](" + link + ")" + "|\n"
                 print(component_name + " is IN_VIOLATION")
             except Exception:
                 logging.error(
                     "Unable to retrieve policies for BOM component {}".
                     format(bom_component), exc_info=True)
+            
+            # get component remediation info
+            component_remediation = get_component_remediation(bom_component)
+            component_version_with_no_vulnerability = component_remediation['noVulnerabilities']['name'] \
+                if 'noVulnerabilities' in component_remediation else "No Solution Found"
+            latest_component_version = component_remediation['latestAfterCurrent']['name'] \
+                if 'latestAfterCurrent' in component_remediation else "No Latest version Found"
+            rewritten += "|" + component_version_with_no_vulnerability
+            rewritten += "|" + latest_component_version + "|\n"
 
     # get the polaris scanning issues
     rewritten += "###### SAST scan by Synopsys Coverity\n"
