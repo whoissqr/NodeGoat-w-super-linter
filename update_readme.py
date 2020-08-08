@@ -56,7 +56,7 @@ if __name__ == "__main__":
                     format(bom_component), exc_info=True)
             
             # get component remediation info
-            component_remediation = get_component_remediation(bom_component)
+            component_remediation = hub.get_component_remediation(bom_component)
             component_version_with_no_vulnerability = component_remediation['noVulnerabilities']['name'] \
                 if 'noVulnerabilities' in component_remediation else "No Solution Found"
             latest_component_version = component_remediation['latestAfterCurrent']['name'] \
