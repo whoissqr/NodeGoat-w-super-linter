@@ -19,8 +19,8 @@ jobs:
         with:
           java-version: 1.8
       
-      - name: Create temp directory
-        run: cd ~; mkdir -p POLARIS_HOME; mkdir -p DETECT_JAR_DOWNLOAD_DIR
+      - name: Create directory
+        run: cd /home; mkdir -p POLARIS_HOME; mkdir -p DETECT_JAR_DOWNLOAD_DIR
 
       - name: Set outputs
         id: vars
@@ -31,8 +31,8 @@ jobs:
       - name: Polaris
         uses: blackducksoftware/github-action@2.0.0
         env:
-          POLARIS_HOME: ~/POLARIS_HOME
-          DETECT_JAR_DOWNLOAD_DIR: ~/DETECT_JAR_DOWNLOAD_DIR
+          POLARIS_HOME: /home/POLARIS_HOME
+          DETECT_JAR_DOWNLOAD_DIR: /home/DETECT_JAR_DOWNLOAD_DIR
         with:
           args: '-d --polaris.url="${{secrets.POLARIS_URL}}" 
           --polaris.access.token="${{secrets.POLARIS_TOKEN}}"
