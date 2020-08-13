@@ -14,8 +14,8 @@
 |Handlebars.js|4.0.5| in VIOLATION|4.0.11-1|5.0.0-alpha.1.ff.0|
 |is-my-json-valid|2.19.0| in VIOLATION|v2.20.4|2.20.5|
 |is-my-json-valid|2.15.0| in VIOLATION|v2.20.4|2.20.5|
-|isaacs's npm|3.10.10| in VIOLATION|3.13.18|v7.0.0-beta.2|
-|js-bson|1.0.9| in VIOLATION|1.1.4|4.0.4|
+|isaacs's npm|3.10.10| in VIOLATION|3.13.18|7.0.0-beta.4|
+|js-bson|1.0.9| in VIOLATION|1.1.4|v4.1.0|
 |JS-YAML. Native JS port of PyYAML.|3.5.5| in VIOLATION|3.6.2|3.14.0|
 |JS-YAML. Native JS port of PyYAML.|3.6.1| in VIOLATION|3.6.2|3.14.0|
 |Lo-Dash|2.4.2| in VIOLATION|4.16.4.1|4.16.4.1|
