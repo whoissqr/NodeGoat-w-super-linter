@@ -20,7 +20,7 @@ jobs:
           java-version: 1.8
       
       - name: Create directory
-        run: cd /home; mkdir -p POLARIS_HOME; mkdir -p DETECT_JAR_DOWNLOAD_DIR
+        run: cd /opt; mkdir -p POLARIS_HOME; mkdir -p DETECT_JAR_DOWNLOAD_DIR
 
       - name: Set outputs
         id: vars
@@ -31,8 +31,8 @@ jobs:
       - name: Polaris
         uses: blackducksoftware/github-action@2.0.0
         env:
-          POLARIS_HOME: /home/POLARIS_HOME
-          DETECT_JAR_DOWNLOAD_DIR: /home/DETECT_JAR_DOWNLOAD_DIR
+          POLARIS_HOME: /opt/POLARIS_HOME
+          DETECT_JAR_DOWNLOAD_DIR: /opt/DETECT_JAR_DOWNLOAD_DIR
         with:
           args: '-d --polaris.url="${{secrets.POLARIS_URL}}" 
           --polaris.access.token="${{secrets.POLARIS_TOKEN}}"
@@ -65,8 +65,8 @@ jobs:
       - uses: actions/cache@v2
         name: Configure polaris caching
         with:
-          path: ~/POLARIS_HOME
-          key: '~/POLARIS_HOME/coverity-tools-*/VERSION.xml'
+          path: /opt/POLARIS_HOME
+          key: '/opt/POLARIS_HOME/coverity-tools-*/VERSION.xml'
 
       - name: Install Python dependencies
         run: |
