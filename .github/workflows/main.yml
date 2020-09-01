@@ -74,7 +74,8 @@ jobs:
       - name: Update README
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          HUB_94_TOKEN: ${{ secrets.HUB_94_TOKEN }}
+          BLACKDUCK_API_TOKEN: ${{secrets.BLACKDUCK_API_TOKEN}}
+          BLACKDUCK_URL: ${{secrets.BLACKDUCK_URL}}
           PROJECT_NAME: ${{ github.event.repository.name }}
           PROJECT_VERSION: ${{ steps.vars.outputs.sha_short }}
           POLARIS_URL: ${{secrets.POLARIS_URL}}

@@ -16,8 +16,10 @@ if __name__ == "__main__":
     rewritten = "## === scan result for last PR/commit status === \n"
     rewritten += "<br/><br/>\n"
 
-    urlbase = "https://poc94.blackduck.synopsys.com/"
-    BD_TOKEN = os.environ.get("HUB_94_TOKEN", "")
+    #urlbase = "https://poc94.blackduck.synopsys.com/"
+    urlbase = os.environ.get("BLACKDUCK_URL", "")
+    BD_TOKEN = os.environ.get("BLACKDUCK_API_TOKEN", "")
+    print("BLACKDUCK_URL = " + BLACKDUCK_URL)
     print("BD_TOKEN = " + BD_TOKEN)
     hub = HubInstance(urlbase, api_token=BD_TOKEN, insecure=True)
 
