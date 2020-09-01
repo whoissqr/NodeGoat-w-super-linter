@@ -19,7 +19,7 @@ if __name__ == "__main__":
     #urlbase = "https://poc94.blackduck.synopsys.com/"
     urlbase = os.environ.get("BLACKDUCK_URL", "")
     BD_TOKEN = os.environ.get("BLACKDUCK_API_TOKEN", "")
-    print("BLACKDUCK_URL = " + BLACKDUCK_URL)
+    print("BLACKDUCK_URL = " + urlbase)
     print("BD_TOKEN = " + BD_TOKEN)
     hub = HubInstance(urlbase, api_token=BD_TOKEN, insecure=True)
 
